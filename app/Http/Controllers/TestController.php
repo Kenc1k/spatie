@@ -10,4 +10,18 @@ class TestController extends Controller
     {
         return view('spatie');
     }
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name',
+        ]);
+
+
+        return redirect('/');
+    }
 }
